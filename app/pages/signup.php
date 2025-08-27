@@ -9,13 +9,15 @@
 </head>
 
 <body>
-    <div class = "py-4">
+    <div class="py-4">
         <h1 class="text-2xl font-bold text-center">Create an Account</h1>
     </div>
 
     <div class="flex items-center justify-center p-12">
         <div class="mx-auto w-full max-w-[550px] bg-white">
-            <form>
+            <form
+            action="../services/signup.services.php" 
+            method="post">
                 <div class="mb-5">
                     <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                         Full Name
@@ -27,7 +29,7 @@
                     <label for="username" class="mb-3 block text-base font-medium text-[#07074D]">
                         Username
                     </label>
-                    <input type="text" name="Username" id="username" placeholder="Create your username"
+                    <input type="text" name="username" id="username" placeholder="Create your username"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                 </div>
                 <div class="mb-5">
@@ -37,7 +39,6 @@
                     <input type="email" name="email" id="email" placeholder="Enter your email"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                 </div>
-                <!-- Create a password input -->
                 <div class="mb-5">
                     <label for="password" class="mb-3 block text-base font-medium text-[#07074D]">
                         Password
@@ -49,14 +50,15 @@
                     <label for="ConfirmPassword" class="mb-3 block text-base font-medium text-[#07074D]">
                         Confirm Password
                     </label>
-                    <input type="password" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm your password"
+                    <input type="password" name="confirmPassword" id="ConfirmPassword"
+                        placeholder="Confirm your password"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                 </div>
-                <!-- Create a remember me checkbox -->
+
                 <div>
-                    <button
+                    <button type="submit" name="signup-submit"
                         class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                        Book Appointment
+                        Signup
                     </button>
                 </div>
             </form>
