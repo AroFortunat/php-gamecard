@@ -9,8 +9,6 @@ if (isset($_POST['signup-submit'])) {
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
 
-
-
     if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location:../pages/signup.php?error=invalidusername&email");
         exit();
