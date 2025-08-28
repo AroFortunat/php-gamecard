@@ -36,7 +36,7 @@ if (isset($_POST['signup-submit'])) {
                 exit();
             } else {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                $insertValueSql = "INSERT INTO gamecard (name, username, email, password) VALUES ('$name', '$username', '$email', '$hashedPassword');";
+                $insertValueSql = "INSERT INTO gamecard (name, username, email, pwd) VALUES ('$name', '$username', '$email', '$hashedPassword');";
                 $result = mysqli_query($connex, $insertValueSql);
                 if (!$result) {
                     header("Location:../pages/signup.php?error=sqlerror");
@@ -48,7 +48,7 @@ if (isset($_POST['signup-submit'])) {
             }
         }
     }
-    // mysqli_close($connex);
+    mysqli_close($connex);
 } else {
     header("Location: ../pages/signup.php?message");
     exit();
