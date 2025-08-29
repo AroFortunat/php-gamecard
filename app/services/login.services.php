@@ -22,7 +22,8 @@ if (isset($_POST["login-submit"])) {
                 $_SESSION["userId"] = $row["id"];
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["status"] = $row["status"];
-                
+                header("Location: ../messages/login.msg.php?login=success");
+                exit();
             }
 
         } else {
@@ -30,6 +31,7 @@ if (isset($_POST["login-submit"])) {
             exit();
         }
     }
+    mysqli_close($connex);
 } else {
     header("Location: ../pages/login.php");
     exit();
