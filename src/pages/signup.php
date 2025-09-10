@@ -12,12 +12,33 @@
     <div class="py-4">
         <h1 class="text-2xl font-bold text-center">Create an Account</h1>
     </div>
-
+    <?php
+    if (isset($_GET["error"])) {
+        switch ($_GET["error"]) {
+            case 'invalidusername&email':
+                echo '    <p class="text-center text-red-500">Pseudo et Email invalid</p>';
+                break;
+            case 'invalidemail':
+                echo '    <p class="text-center text-red-500">Email invalid</p>';
+                break;
+            case 'invalidusername':
+                echo '    <p class="text-center text-red-500">Pseudo invalid</p>';
+                break;
+            case 'pwddontmatch':
+                echo '    <p class="text-center text-red-500">Les mots de passe ne correspondent pas</p>';
+                break;
+            case 'usernametaken':
+                echo '    <p class="text-center text-red-500">Pseudo déjà pris</p>';
+                break;
+            default:
+                echo null;
+                break;
+        }
+    }
+    ?>
     <div class="flex items-center justify-center p-12">
         <div class="mx-auto w-full max-w-[550px] bg-white">
-            <form
-            action="../services/signup.services.php" 
-            method="post">
+            <form action="../services/signup.services.php" method="post">
                 <div class="mb-5">
                     <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
                         Full Name
